@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>This is the films MAIN page</h1>
+<br>
+<h4>Some Pixar Movies:</h4>
+<ul>
+  {% for film in film_list %}
+  <li class="nav-item active">
+    <a class="nav-link active" href="{% url 'hola:details' film.id film.title %}">{{film.title}}</a>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}
